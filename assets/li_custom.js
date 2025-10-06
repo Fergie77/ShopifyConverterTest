@@ -1239,8 +1239,22 @@
   if (window.Alpine && typeof window.Alpine.data === "function") {
     try {
       registerLiquifyComponents();
+      if (typeof window.Alpine.initTree === "function") {
+        try {
+          window.Alpine.initTree(document.body);
+        } catch (_) {}
+      }
     } catch (_) {}
   } else {
-    document.addEventListener("alpine:init", registerLiquifyComponents);
+    document.addEventListener("alpine:init", () => {
+      try {
+        registerLiquifyComponents();
+        if (typeof window.Alpine.initTree === "function") {
+          try {
+            window.Alpine.initTree(document.body);
+          } catch (_) {}
+        }
+      } catch (_) {}
+    });
   }
 })();
