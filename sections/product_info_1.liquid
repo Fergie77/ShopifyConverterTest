@@ -1,0 +1,47 @@
+<div class="product-info-1_wrapper">
+          <div class="floating-add-to-cart_trigger"></div>
+          <div class="product-info-1_layout">
+            <h2 data-delay="0.05" balmaud-animation="split-fade-in" id="w-node-aec062fe-e203-cf36-dc7f-28aaac45dabe-35b5186b" class="product-info-1_heading heading-style-h3">{{ section.settings.text_heading }}</h2>
+            <p id="w-node-ecb01f5e-8bfc-9539-afd0-ed06f0a0cb2b-35b5186b">{{ section.settings.text_paragraph }}</p>{% if section.settings.image_image %}
+{{ section.settings.image_image | image_url: width: 2000 | image_tag: loading: 'lazy', class: 'product-info_image_item', sizes: '100vw', id: 'w-node-a5ec91e9-61c2-ad32-ca1d-e55d5683e461-35b5186b' }}
+{% else %}
+<img src="" class="product-info_image_item" alt="" sizes="100vw" id="w-node-a5ec91e9-61c2-ad32-ca1d-e55d5683e461-35b5186b" loading="lazy">
+{% endif %}
+            <div id="w-node-fa393973-85b8-8e95-8e5b-8d9771f4eb7c-35b5186b" class="product-info_detail-text_layout">
+              <p class="product-info_detail-text_item">New to distilling<br>not to barley</p>
+              <p class="product-info_detail-text_item">For Over Three<br>Generations</p>
+              <p class="product-info_detail-text_item">Balmauddistillery.com<br>Turriff, AB53 5PT</p>
+            </div>
+          </div>
+        </div>
+       {% schema %} {
+    "tag": "section",
+    "name": "Product Info 1",
+    "class": "product-info-1_section",
+    "settings": [
+        {
+            "id": "text_heading",
+            "type": "text",
+            "label": "Heading",
+            "default": "The GoldStandard"
+        },
+        {
+            "id": "text_paragraph",
+            "type": "text",
+            "label": "Paragraph",
+            "default": "Cover crops can boost soil organic matter, improve rooting, help suppress weeds and lower herbicide use, reducing the need for “steel and diesel”.Some spring barley growers have cut their nitrogen use by 50-75% by taking this soil-focused approach, says Mr Fuller.With better crop genetics seen as essential in unlocking this sustainability equation, there is early interest in new spring barley malting varieties, such as Curtis, which may help with this process and also make the malting industry less reliant on number one variety, Laureate Curtis, from plant breeder KWS, was a new entry to the 2023-24 AHDB Recommended List announced at the end of last year, and shows some advantages in terms of yield."
+        },
+        {
+            "id": "image_image",
+            "type": "image_picker",
+            "label": "Image"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Product Info 1",
+            "category": "Liquify",
+            "blocks": []
+        }
+    ]
+} {% endschema %}
