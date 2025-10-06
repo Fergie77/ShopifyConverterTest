@@ -3,6 +3,9 @@ document.addEventListener('alpine:init', () => {
     Alpine.data('handleMinicart', () => ({
         init() {
             console.log('handleMinicart init')
+            console.log('Initial cart state:', this.cart)
+            // Load cart on init
+            this.getCart()
         },
         cart: {
             note: null,
@@ -47,14 +50,19 @@ document.addEventListener('alpine:init', () => {
          * Get the cart data.
          */
         async getCart() {
+            console.log('🛒 getCart() called')
             this.initAbortController()
             await fetch(window.Shopify.routes.root + 'cart.js', {
                 method: 'GET',
                 signal: this.getAbortControllerSignal(),
                 headers: {'Content-Type': 'application/json'},
             })
-                .then(response => response.json())
+                .then(response => {
+                    console.log('📦 Cart response status:', response.status)
+                    return response.json()
+                })
                 .then(data => {
+                    console.log('📦 Cart data received:', data)
                     this.resetAbortController();
 
                     this.cart.item_count = data.item_count;
@@ -64,15 +72,21 @@ document.addEventListener('alpine:init', () => {
                         return item
                     })
 
+                    console.log('📦 Cart items processed:', this.cart.items)
+                    console.log('📦 Cart item count:', this.cart.item_count)
 
                     this.cart.total_price = data.total_price;
                     this.cart.total_weight = data.total_weight;
                     this.cart.total_discount = data.total_discount;
+                    this.cart.original_total_price = data.original_total_price || data.total_price;
+
+                    console.log('📦 Cart totals - price:', this.cart.total_price, 'original:', this.cart.original_total_price)
 
                     this.$dispatch('carttotalitems', data.item_count);
                 })
                 .catch((error) => {
-                    console.error('Error:', error);
+                    console.error('❌ Error fetching cart:', error);
+                    console.error('❌ Error details:', error.message, error.stack);
                 });
         },
 
@@ -100,7 +114,7 @@ document.addEventListener('alpine:init', () => {
          */
         updateCartItemQuantity(key, quantity) {
             this.initAbortController();
-            console.log('updateCartItemQuantity(): key, quantity: ', key, quantity);
+            console.log('🔄 updateCartItemQuantity(): key:', key, 'quantity:', quantity);
             this.cart.items.filter((product)  => {
                 if(product.key === key) {
                     product.quantity = quantity
@@ -108,22 +122,27 @@ document.addEventListener('alpine:init', () => {
             })
             let updates = {};
             updates[key] = quantity;
+            console.log('🔄 Sending update request:', updates);
             fetch(window.Shopify.routes.root + 'cart/update.js', {
                 method: 'POST',
                 signal: this.getAbortControllerSignal(),
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({ updates }),
             })
-                .then(response => response.json())
+                .then(response => {
+                    console.log('✅ Update response status:', response.status);
+                    return response.json();
+                })
                 .then(data => {
                     this.resetAbortController();
-                    console.log('updateCartItemQuantity(): ', data);
+                    console.log('✅ updateCartItemQuantity() response:', data);
 
                     this.$dispatch('cartupdated');
                     this.$dispatch('showcartmessage', { status: data.status, message: data.message, description: data.description });
                 })
                 .catch((error) => {
-                    console.error('Error:', error);
+                    console.error('❌ Error updating cart:', error);
+                    console.error('❌ Error details:', error.message, error.stack);
                     this.$dispatch('showcartmessage', { status: error?.status, message: error, description: error });
                 });
         },
