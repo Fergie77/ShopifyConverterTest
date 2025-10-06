@@ -1178,8 +1178,29 @@ document.addEventListener("alpine:init", () => {
     );
     if (!el) return;
     try {
+      const root = el.closest("[x-data]");
+      const hasAtClick = el.hasAttribute("@click");
+      const atClickVal = el.getAttribute("@click");
+      const hasXOnClick = el.hasAttribute("x-on:click");
+      const xOnClickVal = el.getAttribute("x-on:click");
+      const hasColonDisabled = el.hasAttribute(":disabled");
+      const colonDisabledVal = el.getAttribute(":disabled");
+      const hasXData = !!root;
+      const hasComponent = hasXData && root.__x && root.__x.$data;
+      const hasAddToCart = !!(
+        hasComponent && typeof root.__x.$data.addToCart === "function"
+      );
       console.info("Liquify - debug: add-to-cart button clicked", {
         type: el.getAttribute("li-element"),
+        hasAtClick,
+        atClickVal,
+        hasXOnClick,
+        xOnClickVal,
+        hasColonDisabled,
+        colonDisabledVal,
+        hasXData,
+        hasComponent: !!hasComponent,
+        hasAddToCart,
       });
     } catch (_) {}
   });
