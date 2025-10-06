@@ -649,13 +649,31 @@ document.addEventListener("alpine:init", () => {
         // Bei einer Variantenauswahl hingegen verweist this.$el auf das Element, das die Auswahl ausgelöst hat.
         let form = this.$el.closest("form") ?? this.$el.querySelector("form");
         const formData = LiquifyHelper.serializeFormToObject(form);
+        const effectiveProductId =
+          productId ?? this.product.selected_or_first_available_variant?.id;
+        const effectiveQuantity = quantity ?? this.quantity ?? 1;
+
+        console.info("Liquify - addToCart:start", {
+          productId: effectiveProductId,
+          quantity: effectiveQuantity,
+          toggleMiniCart,
+        });
+        try {
+          window.dispatchEvent(
+            new CustomEvent("li:addtocart", {
+              detail: {
+                stage: "start",
+                productId: effectiveProductId,
+                quantity: effectiveQuantity,
+              },
+            })
+          );
+        } catch (_) {}
         const payload = {
           items: [
             {
-              id:
-                productId ??
-                this.product.selected_or_first_available_variant?.id,
-              quantity: quantity ?? this.quantity ?? 1,
+              id: effectiveProductId,
+              quantity: effectiveQuantity,
               ...formData,
             },
           ],
@@ -672,7 +690,17 @@ document.addEventListener("alpine:init", () => {
           .then((data) => {
             this.products = data.items;
 
-            console.log("Liquify - product(s) added");
+            console.info("Liquify - addToCart:success", {
+              items: data.items,
+              count: data.items?.length,
+            });
+            try {
+              window.dispatchEvent(
+                new CustomEvent("li:addtocart", {
+                  detail: { stage: "success", items: data.items, cart: data },
+                })
+              );
+            } catch (_) {}
             this.$dispatch("cartupdated", this.products);
 
             if (toggleMiniCart) {
@@ -686,7 +714,14 @@ document.addEventListener("alpine:init", () => {
             });
           })
           .catch((error) => {
-            console.error("Liquify - addToCart error:", error);
+            console.error("Liquify - addToCart:error", error);
+            try {
+              window.dispatchEvent(
+                new CustomEvent("li:addtocart", {
+                  detail: { stage: "error", error },
+                })
+              );
+            } catch (_) {}
             this.$dispatch("showcartmessage", {
               status: error.status,
               message: error.message,
