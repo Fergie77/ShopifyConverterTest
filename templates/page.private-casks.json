@@ -1,0 +1,32 @@
+{
+  "sections": {
+    "cask_hero": {
+      "type": "cask_hero"
+    },
+    "casks_intro": {
+      "type": "casks_intro"
+    },
+    "journey": {
+      "type": "journey"
+    },
+    "moment": {
+      "type": "moment"
+    },
+    "cask_options": {
+      "type": "cask_options"
+    },
+    "casks_sign_up": {
+      "type": "casks_sign_up"
+    }
+  },
+  "layout": "page.private-casks",
+  "wrapper": "main.main-wrapper",
+  "order": [
+    "cask_hero",
+    "casks_intro",
+    "journey",
+    "moment",
+    "cask_options",
+    "casks_sign_up"
+  ]
+}
