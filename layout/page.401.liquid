@@ -135,6 +135,6 @@ if(ageGate){
   <script src="https://balmaud.netlify.app/main.js"></script>
 
   <script src="{{ 'alpinejs3.js' | asset_url }}"></script>
-  <script src="{{ 'li_custom.js' | asset_url }}"></script>
+  <script>(function(){setTimeout(function(){var s=document.createElement('script');s.src={{ 'li_custom.js' | asset_url | json }};s.async=true;document.body.appendChild(s);},2000);}())</script>
   <script src="{{ 'li_minicart.js' | asset_url }}"></script>
 </body></html>
