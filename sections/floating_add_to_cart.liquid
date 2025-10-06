@@ -1,4 +1,4 @@
-<div li-element="product-variant-container" class="floating-add-to-cart_layout" x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})" x-init="$nextTick(() =&gt; { activateVariants() })" x-on:setbundleitem.window="updateBundleItem($event.detail.product, $event.detail.quantity)">
+<div li-element="product-variant-container" class="floating-add-to-cart_layout">
           <div class="product-header_form-block w-form">
             <form method="get" li-form:product="" name="wf-form-Add-To-Cart" data-name="Add To Cart" li-form="product" id="wf-form-Add-To-Cart" class="product-header_default-state is-floating" data-wf-page-id="688218e5775a24db35b5186b" data-wf-element-id="d740f348-eea5-29ff-1a31-942cef517846">
               {% if product.has_only_default_variant != true %}<div li-if="product.has_only_default_variant != true" class="product-header_option-list is-floating">
@@ -11,9 +11,9 @@
                 </div>
               </div>{% endif %}
               <div class="product-header_add-to-cart-wrapper">
-                <div li-js-if="selected_or_first_available_variant.available" class="product-header_buy-wrappper"><input class="product-header_quantity-field w-input" maxlength="256" name="quantity" li-element="add-to-cart-quantity" data-name="Quantity" placeholder="1" type="number" id="quantity" required="" x-model="quantity">
-                  <a li-element="add-to-cart" href="#" class="button is-dark-outline w-button" @click="addToCart($event, true)" :disabled="!addToCartButton">Add to basket</a>
-                  <a li-element="checkout-add-to-cart" href="#" class="button is-dark w-button" @click="addToCartAndCheckout($event, true)">Buy Now</a>
+                <div li-js-if="selected_or_first_available_variant.available" class="product-header_buy-wrappper"><input class="product-header_quantity-field w-input" maxlength="256" name="quantity" li-element="add-to-cart-quantity" data-name="Quantity" placeholder="1" type="number" id="quantity" required="">
+                  <a li-element="add-to-cart" href="#" class="button is-dark-outline w-button">Add to basket</a>
+                  <a li-element="checkout-add-to-cart" href="#" class="button is-dark w-button">Buy Now</a>
                 </div>
               </div>
             </form>

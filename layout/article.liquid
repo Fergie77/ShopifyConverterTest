@@ -52,7 +52,7 @@ opacity: 0;
       ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
     }
   </style>
-<script src="{{ 'li_helper.js' | asset_url }}" type="text/javascript"></script><script src="{{ 'li_custom.js' | asset_url }}" type="text/javascript"></script>{{ content_for_header }}</head>
+<script src="{{ 'li_helper.js' | asset_url }}" type="text/javascript"></script>{{ content_for_header }}</head>
 <body li-page="article">
   <div class="page-wrapper">
     <div class="global-styles w-embed">
@@ -749,6 +749,6 @@ if(ageGate){
 </script>
   <script src="https://balmaud.netlify.app/main.js"></script>
 
-  <script src="{{ 'alpinejs3.js' | asset_url }}"></script>
+  <script src="{{ 'li_custom.js' | asset_url }}"></script>
   <script src="{{ 'li_minicart.js' | asset_url }}"></script>
 </body></html>
