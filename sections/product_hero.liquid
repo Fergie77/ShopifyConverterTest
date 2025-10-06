@@ -1,5 +1,5 @@
 <div balmaud-animation="nav-colour-swap" class="product-hero_wrapper">
-          <div li-element="product-variant-container" class="product-hero_layout">
+          <div li-element="product-variant-container" class="product-hero_layout" x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})" x-init="$nextTick(() =&gt; { activateVariants() })" x-on:setbundleitem.window="updateBundleItem($event.detail.product, $event.detail.quantity)">
             <div balmaud-animation="fade-in" id="w-node-_15cfefe5-5e9f-a623-058d-317be009b4d1-35b5186b" class="product-hero_info_layout">
               <h1 li-object:text="product.title" class="product-hero_info_heading heading-style-h6 text-style-allcaps">{{ product.title }}</h1>
               <div class="w-richtext">{{ product.description }}</div>
