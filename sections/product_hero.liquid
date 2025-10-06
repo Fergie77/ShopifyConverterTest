@@ -5,6 +5,7 @@
               <h1 li-object:text="product.title" class="product-hero_info_heading heading-style-h6 text-style-allcaps">{{ product.title }}</h1>
               <div class="w-richtext">{{ product.description }}</div>
               <div class="product-header_form-block w-form">
+                    {{cart.items[0].title }}
                 {% form 'product', product, class: 'product-header_default-state' %}
                   {% if product.has_only_default_variant != true %}<div li-if="product.has_only_default_variant != true" class="product-header_option-list">
                     <div li-element="product-options-loop" class="product-header_option">
