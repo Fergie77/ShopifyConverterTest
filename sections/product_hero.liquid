@@ -5,27 +5,6 @@
               <h1 li-object:text="product.title" class="product-hero_info_heading heading-style-h6 text-style-allcaps">{{ product.title }}</h1>
               <div class="w-richtext">{{ product.description }}</div>
               <div class="product-header_form-block w-form">
-                   <script>
-  {% if cart.item_count > 0 %}
-    console.log('=== CART CONTENTS ===');
-    console.log('Item count: {{ cart.item_count }}');
-    console.log('Total price: £{{ cart.total_price | money_without_currency }}');
-    console.log('Cart items:');
-    {% for item in cart.items %}
-      console.log({
-        title: '{{ item.product.title | escape }}',
-        variant: '{{ item.variant.title | escape }}',
-        quantity: {{ item.quantity }},
-        price: '£{{ item.price | money_without_currency }}',
-        line_price: '£{{ item.line_price | money_without_currency }}',
-        image: '{{ item.image | img_url: '100x' }}'
-      });
-    {% endfor %}
-    console.log('=====================');
-  {% else %}
-    console.log('Cart is empty');
-  {% endif %}
-</script>
                 {% form 'product', product, class: 'product-header_default-state' %}
                   {% if product.has_only_default_variant != true %}<div li-if="product.has_only_default_variant != true" class="product-header_option-list">
                     <div li-element="product-options-loop" class="product-header_option">
