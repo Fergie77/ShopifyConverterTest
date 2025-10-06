@@ -1236,6 +1236,20 @@
       });
     } catch (_) {}
   };
+  // If this script loads BEFORE Alpine, defer Alpine boot until after registration
+  try {
+    const previousDefer = window.deferLoadingAlpine;
+    window.deferLoadingAlpine = (alpineInit) => {
+      try {
+        registerLiquifyComponents();
+      } catch (_) {}
+      if (typeof previousDefer === "function") {
+        previousDefer(alpineInit);
+      } else {
+        alpineInit();
+      }
+    };
+  } catch (_) {}
   if (window.Alpine && typeof window.Alpine.data === "function") {
     try {
       registerLiquifyComponents();
