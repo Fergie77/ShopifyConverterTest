@@ -12,7 +12,7 @@
           </div>{% if section.settings.image_image %}
 {{ section.settings.image_image | image_url: width: 2000 | image_tag: loading: 'lazy', class: 'hero_background-content', balmaud-animation: 'content-fade-in', sizes: '100vw' }}
 {% else %}
-<img src="" class="hero_background-content" balmaud-animation="content-fade-in" alt="" sizes="100vw" loading="lazy">
+<img src="{{ 'image-1.webp' | asset_url }}" class="hero_background-content" balmaud-animation="content-fade-in" alt="" sizes="100vw" loading="lazy">
 {% endif %}
         </div>
        {% schema %} {

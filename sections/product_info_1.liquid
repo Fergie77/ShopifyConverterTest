@@ -3,9 +3,9 @@
           <div class="product-info-1_layout">
             <h2 data-delay="0.05" li-settings:text="Heading" balmaud-animation="split-fade-in" id="w-node-aec062fe-e203-cf36-dc7f-28aaac45dabe-35b5186b" class="product-info-1_heading heading-style-h3">{{ section.settings.text_heading }}</h2>
             <p li-settings:text="Paragraph" id="w-node-ecb01f5e-8bfc-9539-afd0-ed06f0a0cb2b-35b5186b">{{ section.settings.text_paragraph }}</p>{% if section.settings.image_image %}
-{{ section.settings.image_image | image_url: width: 2000 | image_tag: loading: 'lazy', class: 'product-info_image_item', sizes: '100vw', id: 'w-node-a5ec91e9-61c2-ad32-ca1d-e55d5683e461-35b5186b' }}
+{{ section.settings.image_image | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'product-info_image_item', sizes: '100vw', id: 'w-node-a5ec91e9-61c2-ad32-ca1d-e55d5683e461-35b5186b' }}
 {% else %}
-<img src="" class="product-info_image_item" alt="" sizes="100vw" id="w-node-a5ec91e9-61c2-ad32-ca1d-e55d5683e461-35b5186b" loading="lazy">
+<img src="{{ 'April_balmaud_shoot-3-1.webp' | asset_url }}" class="product-info_image_item" alt="" sizes="100vw" id="w-node-a5ec91e9-61c2-ad32-ca1d-e55d5683e461-35b5186b" loading="lazy">
 {% endif %}
             <div id="w-node-fa393973-85b8-8e95-8e5b-8d9771f4eb7c-35b5186b" class="product-info_detail-text_layout">
               <p class="product-info_detail-text_item">New to distilling<br>not to barley</p>

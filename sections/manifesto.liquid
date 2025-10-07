@@ -2,9 +2,9 @@
           <div class="manifesto_layout">
             <div id="w-node-_50a15051-2bb3-952d-17db-12e039aa0367-b972f49a" class="manifesto_image_wrapper">
               <div class="manifesto_image is-absolute">{% if section.settings.image_image %}
-{{ section.settings.image_image | image_url: width: 2000 | image_tag: loading: 'lazy', class: 'manifesto_image', sizes: '100vw' }}
+{{ section.settings.image_image | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'manifesto_image', sizes: '100vw' }}
 {% else %}
-<img src="" class="manifesto_image" alt="" sizes="100vw" loading="lazy">
+<img src="{{ 'April_balmaud_shoot-3-1.webp' | asset_url }}" class="manifesto_image" alt="" sizes="100vw" loading="lazy">
 {% endif %}
                 <div class="manifesto_image_mask"></div>
               </div>
@@ -14,9 +14,9 @@
             <h2 data-stagger="0.05" li-settings:text="Heading" balmaud-animation="split-fade-in" id="w-node-a6aa2052-33f2-bba1-a56c-d0445962e633-b972f49a" class="manifesto_heading heading-style-h4">{{ section.settings.text_heading }}</h2>
             <div id="w-node-_84ef53f1-0854-3589-c67e-a5e2e7ee8283-b972f49a" class="manifesto_image_wrapper">
               <div class="manifesto_image">{% if section.settings.image_image %}
-{{ section.settings.image_image | image_url: width: 2000 | image_tag: loading: 'lazy', class: 'manifesto_image', sizes: '100vw' }}
+{{ section.settings.image_image | image_url: width: 1000 | image_tag: loading: 'lazy', class: 'manifesto_image', sizes: '100vw' }}
 {% else %}
-<img src="" class="manifesto_image" alt="" sizes="100vw" loading="lazy">
+<img src="{{ 'April_balmaud_shoot-3-1.webp' | asset_url }}" class="manifesto_image" alt="" sizes="100vw" loading="lazy">
 {% endif %}
                 <div class="manifesto_image_mask"></div>
               </div>

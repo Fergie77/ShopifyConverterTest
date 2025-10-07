@@ -18,7 +18,7 @@
           </div>{% if section.settings.image_image %}
 {{ section.settings.image_image | image_url: width: 2000 | image_tag: loading: 'lazy', class: 'casks_sign-up_image', sizes: '100vw' }}
 {% else %}
-<img src="" class="casks_sign-up_image" alt="" sizes="100vw" loading="lazy">
+<img src="{{ 'Still-2025-03-26-140012_1.33.1-2.webp' | asset_url }}" class="casks_sign-up_image" alt="" sizes="100vw" loading="lazy">
 {% endif %}
         </div>
        {% schema %} {
