@@ -1,39 +1,10 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "video_hero": {
-      "type": "video_hero",
-      "settings": {
-        "text_heading_eyebrow": "Our Farms",
-        "text_heading": "A story written in the land",
-        "text_paragraph": "Balmaud is where that legacy evolves. A Highland Single Estate Distillery, purpose-built to bring together tradition and innovation on one site – with modern distilling technology, sustainable infrastructure, and complete control from grain to glass."
-      }
+      "type": "video_hero"
     },
     "timeline": {
-      "type": "timeline",
-      "settings": {
-        "text_timeline_heading_1": "THREE GENERATIONS TO REACH THIS POINT",
-        "text_timeline_paragraph_1": "Balmaud began not as a distillery, but as a family farm – with the family farming for generations in the North East of Scotland. It was George Strachan who first saw the potential of this land, moving to Mill of Balmaud Farm in 1958 alongside his brother, Nat. That knowledge has now been passed down through three generations.For years, building a distillery on the farm was just a dream. An idea found a place in Wilson’s mind and slowly grew, later starting conversations around the kitchen table and developing into what we now call Balmaud. George imagined a spirit made from their own barley, shaped by their own hands. Today, that vision lives on in Balmaud – a new name in Scotch whisky, but one built on generations of hard work, care, and connection to the land.",
-        "text_timeline_heading_2": "Providing to the whisky world",
-        "text_timeline_paragraph_2": "Before Balmaud became a distillery, it was already part of the whisky world. For decades, the Strachan family’s barley quietly made its way into some of Scotland’s most celebrated spirits – grown to the highest standards, trusted by master distillers, and known for its quality.Farming over 1,750 acres across Aberdeenshire, the family has long been one of the region’s most respected suppliers of malting barley.This behind-the-scenes contribution laid the foundation for what Balmaud would become: a distillery built with respect for tradition, but a desire to do things differently – bringing every step of the process home.",
-        "text_timeline_heading_3": "A Single Estate Distillery",
-        "text_timeline_paragraph_3": "Balmaud is a true Highland Single Estate Distillery – where every part of the whisky-making journey happens in one place, on land the family knows like the back of their hands.Barley is grown in the fields surrounding the stillhouse. Water is drawn just yards away, from a source that has served the farm for decades. And the distillery is powered by two on-site wind turbines, generating clean energy from the same landscape that grows the grain.From fermentation through to cask storage, everything happens here. It’s a process built with care, precision and full traceability – from seed to spirit. That level of control means every cask reflects the values Balmaud was founded on: integrity, sustainability, and a deep respect for the land.",
-        "text_timeline_heading_4": "A Focus on sustainability",
-        "text_timeline_paragraph_4": "Sustainability isn’t just a feature of the Balmaud distillery – it’s part of its foundation. From the earliest planning stages, every decision has been made with care for the land and long-term responsibility in mind.The two wind turbines that power the distillery draw energy from the same hills that grow the grain. Heat and water are recycled throughout the process, improving efficiency and reducing bi-product, with the remainder being thoughtfully disposed of through an anaerobic digestion system. With the whisky-making journey taking place on-site, emissions are reduced at every step – from grain to cask.",
-        "text_timeline_heading_5": "Our First Spirit Release",
-        "text_timeline_paragraph_5": "Balmaud’s story begins not with whisky, but with the launch of our debut Scottish Dry Gin, soon to be followed by carefully crafted vodka and rum. These early spirits offer a first glimpse into the character of what we're building, while our whisky matures quietly in casks.Distilled on-site with the same care and precision that guides our whisky-making, our gin is refreshing and gently complex. The nose opens with soft citrus - orange, lemon, and a delicate hint of pomegranate. On the palate, a sweet, fruity start gives way to clean citrus notes, balanced by a touch of juniper, best enjoyed simply with tonic and a slice of orange.This gin marks the beginning of a new chapter for Balmaud - and provides a first taste of the care, craft, and character that will define every spirit we release.",
-        "image_timeline_image_1": "shopify://shop_images/April_balmaud_shoot-6_1.webp",
-        "image_timeline_image_2": "shopify://shop_images/image_30.webp",
-        "image_timeline_image_3": "shopify://shop_images/April_balmaud_shoot-6_1.webp"
-      }
+      "type": "timeline"
     }
   },
   "layout": "page.about",

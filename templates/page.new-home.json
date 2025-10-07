@@ -1,55 +1,37 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "home_hero": {
-      "type": "home_hero",
-      "settings": {}
+      "type": "home_hero"
     },
     "legacy": {
-      "type": "legacy",
-      "settings": {}
+      "type": "legacy"
     },
     "detail_divider": {
-      "type": "detail_divider",
-      "settings": {}
+      "type": "detail_divider"
     },
     "about": {
       "type": "about",
       "blocks": {
         "about-block": {
-          "type": "about-block",
           "name": "About Block",
-          "settings": {}
+          "type": "about-block"
         }
       },
       "block_order": [
         "about-block"
-      ],
-      "settings": {}
+      ]
     },
     "manifesto": {
-      "type": "manifesto",
-      "settings": {}
+      "type": "manifesto"
     },
     "legacy_casks": {
-      "type": "legacy_casks",
-      "settings": {}
+      "type": "legacy_casks"
     },
     "manifesto_2": {
-      "type": "manifesto_2",
-      "settings": {}
+      "type": "manifesto_2"
     },
     "diary": {
-      "type": "diary",
-      "settings": {}
+      "type": "diary"
     }
   },
   "layout": "page.new-home",
