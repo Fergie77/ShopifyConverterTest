@@ -1,96 +1,37 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "home_hero": {
-      "type": "home_hero",
-      "settings": {
-        "text_heading": "Nothing Ordinary",
-        "text_paragraph": "THE FIRST RELEASE SPIRIT FROM BALMAUD AVAILABLE NOW ONLINE. THE FIRST RELEASE SPIRIT FROM BALMAUD AVAILABLE NOW ONLINE",
-        "text_button_text": "Shop Now",
-        "url_link": ""
-      }
+      "type": "home_hero"
     },
     "legacy": {
-      "type": "legacy",
-      "settings": {
-        "text_heading": "A LEGACYIN THE MAKING",
-        "text_paragraph": "At our 100% family-owned artisan distillery, we make vodka in small batches from organic grapes, infused with whole organic ingredients."
-      }
+      "type": "legacy"
     },
     "detail_divider": {
-      "type": "detail_divider",
-      "settings": {}
+      "type": "detail_divider"
     },
     "about": {
       "type": "about",
       "blocks": {
         "about-block": {
-          "type": "about-block",
           "name": "About Block",
-          "settings": {
-            "image_image": "shopify://shop_images/image_30.webp",
-            "text_heading": "The Distillery",
-            "text_paragraph": "At our 100% family-owned artisan distillery, we make vodka in small batches from organic grapes, infused with whole organic ingredients.",
-            "text_button_text": "Shop Now",
-            "url_link": ""
-          }
-        },
-        "about_block_EreLpM": {
-          "type": "about-block",
-          "settings": {
-            "text_heading": "The Distillery",
-            "text_paragraph": "At our 100% family-owned artisan distillery, we make vodka in small batches from organic grapes, infused with whole organic ingredients.",
-            "text_button_text": "Shop Now",
-            "url_link": ""
-          }
+          "type": "about-block"
         }
       },
       "block_order": [
-        "about-block",
-        "about_block_EreLpM"
-      ],
-      "settings": {}
+        "about-block"
+      ]
     },
     "manifesto": {
-      "type": "manifesto",
-      "settings": {
-        "text_paragraph": "Great whisky should be as good for our planet as it is for our customers. A new gold standard for sustainable luxury whisky making, Perfecting our product by controlling all facets of the production process, from growth to grain to glass.",
-        "text_heading": "Old School Farmers New School Distillers"
-      }
+      "type": "manifesto"
     },
     "legacy_casks": {
-      "type": "legacy_casks",
-      "settings": {
-        "text_heading": "Own your Legacy",
-        "text_paragraph": "At our 100% family-owned artisan distillery, we make vodka in small batches from organic grapes, infused with whole organic ingredients.",
-        "text_button_text": "Shop Now",
-        "url_link": ""
-      }
+      "type": "legacy_casks"
     },
     "manifesto_2": {
-      "type": "manifesto_2",
-      "settings": {
-        "image_image": "shopify://shop_images/April_balmaud_shoot-3_1.webp",
-        "text_paragraph": "Great whisky should be as good for our planet as it is for our customers. A new gold standard for sustainable luxury whisky making, Perfecting our product by controlling all facets of the production process, from growth to grain to glass.",
-        "text_heading": "Find your Unordinary way to drink",
-        "text_button_text": "Shop Now",
-        "url_link": ""
-      }
+      "type": "manifesto_2"
     },
     "diary": {
-      "type": "diary",
-      "settings": {
-        "text_button_text": "Shop Now",
-        "url_link": ""
-      }
+      "type": "diary"
     }
   },
   "layout": "page.new-home",
