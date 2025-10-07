@@ -627,7 +627,7 @@ html:not(.wf-design-mode) .layout-grid_wrapper {
                           </div>
                           <div class="mini-cart_line-item no-scrollbar">
                             <ul role="list" class="mini-cart_line-item_list w-list-unstyled">
-                              <template x-for="item in cart.items" :key="item.key"><li class="mini-cart_line-item_item"><img class="mini-cart_line-item_img" src="{{ 'PRODUCT_PLACEHOLDER.webp' | asset_url }}" alt="" sizes="100vw" loading="lazy" srcset="{{ 'PRODUCT_PLACEHOLDER-p-500.webp' | asset_url }} 500w, {{ 'PRODUCT_PLACEHOLDER.webp' | asset_url }} 649w" :src="item.featured_image?.url || '{{ 'PRODUCT_PLACEHOLDER.webp' | asset_url }}'" :alt="item.product_title">
+                              <template x-for="item in cart.items" :key="item.key"><li class="mini-cart_line-item_item"><img class="mini-cart_line-item_img" src="{{ 'PRODUCT_PLACEHOLDER.webp' | asset_url }}" alt="" sizes="100vw" loading="lazy" srcset="{{ 'PRODUCT_PLACEHOLDER-p-500.webp' | asset_url }} 500w, {{ 'PRODUCT_PLACEHOLDER.webp' | asset_url }} 649w" :src="item.image || '{{ 'PRODUCT_PLACEHOLDER.webp' | asset_url }}'" :alt="item.product_title">
                                 <div class="mini-cart_line-item_product-info">
                                   <div class="mini-cart_line-item_title_wrapper">
                                     <div class="text-size-regular" x-text="item.product_title">Highland Dry Gin</div>
