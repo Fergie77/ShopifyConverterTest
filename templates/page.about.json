@@ -12,6 +12,7 @@
     "video_hero": {
       "type": "video_hero",
       "settings": {
+        "video": "shopify://files/videos/ROASTER_VIDEO_V2_1920X1080.mp4",
         "text_heading_eyebrow": "Our Farms",
         "text_heading": "A story written in the land",
         "text_paragraph": "Balmaud is where that legacy evolves. A Highland Single Estate Distillery, purpose-built to bring together tradition and innovation on one site – with modern distilling technology, sustainable infrastructure, and complete control from grain to glass."
