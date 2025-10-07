@@ -16,7 +16,7 @@
     <div class="product-header_buy-wrappper" >
         <input class="product-header_quantity-field w-input" maxlength="256" name="quantity" li-element="add-to-cart-quantity" data-name="Quantity" placeholder="1" type="number" id="quantity" required="" x-model="quantity">
                   <a li-element="add-to-cart" href="#" class="button is-dark-outline w-button" @click="addToCart($event, true)" :disabled="!addToCartButton">Add to basket</a>
-                  <a li-element="checkout-add-to-cart" href="#" class="button is-dark w-button" @click="addToCartAndCheckout($event, true)">Buy Now</a>
+                  <a li-element="checkout-add-to-cart" href="#" class="button is-dark w-button" @click="addToCartAndCheckout($event, false)">Buy Now</a>
                 
             </div>
     </template>
