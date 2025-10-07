@@ -1,0 +1,134 @@
+
+                                  <div li-if="predictive_search.performed" class="predictive-search_conditional">
+                                    <div li-tag="assign first_column_results_size = predictive_search.resources.queries.size | plus: predictive_search.resources.collections.size | plus: predictive_search.resources.pages.size | plus: predictive_search.resources.articles.size | plus: predictive_search.resources.products.size" class="hide">This is some text inside of a div block.</div>
+                                    <div li-if="first_column_results_size &gt; 0" class="predictive-search_conditional">
+                                      <div li-if="predictive_search.resources.queries.size &gt; 0 or predictive_search.resources.collections.size &gt; 0" class="predictive-search_topic">
+                                        <div class="predictive-search_headline">
+                                          <div class="text-style-muted">Suggestions</div>
+                                        </div>
+                                        <ul role="list" class="predictive-search_list w-list-unstyled">
+                                          <li li-for="query in predictive_search.resources.queries" class="predictive-search_item">
+                                            <a li-object:href="query.url" href="#" class="predictive-search_link w-inline-block">
+                                              <div li-object="query.styled_text">Tag</div>
+                                            </a>
+                                          </li>
+                                          <li li-for="collection in predictive_search.resources.collections" class="predictive-search_item">
+                                            <a li-object:href="collection.url" href="#" class="predictive-search_link w-inline-block">
+                                              <div li-object="collection.title">Tag</div>
+                                            </a>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                      <div li-if="predictive_search.resources.products.size &gt; 0 or predictive_search.resources.articles.size &gt; 0 or predictive_search.resources.pages.size &gt; 0" class="predictive-search_topic">
+                                        <div class="predictive-search_headline">
+                                          <div class="text-style-muted">Products</div>
+                                        </div>
+                                        <ul role="list" class="predictive-search_product-list w-list-unstyled">
+                                          <li li-for="product in predictive_search.resources.products" class="predictive-search_produt-item">
+                                            <a li-object:href="product.url" href="#" class="predictive-search_line-item w-inline-block">
+                                              <div class="predictive-search_image-wrapper"><img li-object:src="product.featured_media | image_url: width: 150" li-object:alt="product.featured_image.alt" alt="" src="../images/platzhalter.svg" loading="lazy" class="predictive-search_image"></div>
+                                              <div class="predictive-search_product-info">
+                                                <div class="text-size-regular text-weight-bold"><span li-object="product.title">Product Title</span></div>
+                                                <div class="text-size-small"><span li-object="product.price | money">18.00$</span></div>
+                                              </div>
+                                            </a>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                      <div li-if="predictive_search.resources.articles.size &gt; 0 or predictive_search.resources.pages.size &gt; 0" class="predictive-search_topic">
+                                        <div class="predictive-search_headline">
+                                          <div class="text-style-muted">Pages</div>
+                                        </div>
+                                        <ul role="list" class="predictive-search_list w-list-unstyled">
+                                          <li li-for="page in predictive_search.resources.pages" class="predictive-search_item">
+                                            <a li-object:href="page.url" href="#" class="predictive-search_link w-inline-block">
+                                              <div li-object="page.title">Tag</div>
+                                            </a>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                    <div li-if="first_column_results_size == 0" class="predictive-search_conditional">
+                                      <div class="predictive-search_topic">
+                                        <div class="text-style-muted">Nothing found in "<span li-object="predictive_search.terms">Search Term</span>"</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div li-unless="predictive_search.performed" class="predictive-search_conditional">
+                                    <div class="predictive-search_overflow">
+                                      <div class="predictive-search_topic">
+                                        <div class="predictive-search_headline">
+                                          <div class="text-style-muted">Suggestions</div>
+                                        </div>
+                                        <ul role="list" class="predictive-search_list w-list-unstyled">
+                                          {% for block in section.blocks %}
+  {% if block.type == "search---suggestion" %}
+    <li li-block="Search - Suggestion" class="predictive-search_item">
+                                            <a li-settings:url="Link" href="{{ block.settings.url_link }}" class="predictive-search_link w-inline-block">
+                                              <div li-settings:text="Text">{{ block.settings.text_text }}</div>
+                                            </a>
+                                          </li>
+  {% endif %}
+{% endfor %}
+                                        </ul>
+                                      </div>
+                                      <div class="predictive-search_topic">
+                                        <div class="predictive-search_headline">
+                                          <div class="text-style-muted">Bestseller</div>
+                                        </div>
+                                        <ul role="list" class="predictive-search_product-list w-list-unstyled">
+                                          <li li-settings:collection="Search - Bestseller" class="predictive-search_produt-item">
+                                            <a li-object:href="product.url" href="#" class="predictive-search_line-item w-inline-block">
+                                              <div class="predictive-search_image-wrapper"><img li-object:src="product.featured_image | img_url: 'master'" li-object:alt="product.featured_image.alt" alt="" src="../images/platzhalter.svg" loading="lazy" class="predictive-search_image"></div>
+                                              <div class="predictive-search_product-info">
+                                                <div class="text-size-regular text-weight-bold"><span li-object="product.title">Product Title</span></div>
+                                                <div class="text-size-small"><span li-object="product.price | money">18.00$</span></div>
+                                              </div>
+                                            </a>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                 {% schema %} {
+    "tag": "section",
+    "name": "predictive_search",
+    "class": "predictive-search_section",
+    "settings": [
+        {
+            "id": "collection_search_bestseller",
+            "type": "collection",
+            "label": "Search - Bestseller"
+        }
+    ],
+    "blocks": [
+        {
+            "name": "Search - Suggestion",
+            "type": "search---suggestion",
+            "settings": [
+                {
+                    "id": "url_link",
+                    "type": "url",
+                    "label": "Link"
+                },
+                {
+                    "id": "text_text",
+                    "type": "text",
+                    "label": "Text",
+                    "default": "Tag"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "predictive_search",
+            "category": "Liquify",
+            "blocks": [
+                {
+                    "type": "search---suggestion"
+                }
+            ]
+        }
+    ]
+} {% endschema %}
