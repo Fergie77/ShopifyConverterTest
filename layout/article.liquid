@@ -604,7 +604,7 @@ html:not(.wf-design-mode) .layout-grid_wrapper {
             <div class="nav_aside">
               <div>
                 <div class="nav_mini-cart">
-                  <div data-hover="false" data-delay="0" class="nav_dropdown w-dropdown" x-data="handleMinicart()" @cartupdated.window="getCart()" @showcartmessage.window="showCartMessage($event)">
+                  <div data-hover="false" data-delay="0" class="nav_dropdown w-dropdown" x-data="handleMinicart()" @cartupdated.window="getCart()" @toggleminicart.window="toggleMiniCart()" @showcartmessage.window="showCartMessage($event)">
                     <div class="nav_shop-icon w-dropdown-toggle" @click="toggleMiniCart()"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 21 18" fill="none" class="nav_basket">
                         <path d="M16.5947 17.3032H3.63969L0 6.05322H20.2341L16.5947 17.3032ZM4.09469 16.6782H16.14L19.3753 6.67822H0.859375L4.09469 16.6782Z" fill="currentColor"></path>
                         <path d="M6.7018 0L7.28242 0.232188L4.7818 6.48156L4.20117 6.24938L6.7018 0ZM13.5324 0L16.0324 6.25L15.4518 6.4825L12.9518 0.232188L13.5324 0ZM7.30461 11.6781H12.9296V12.3031H7.30461V11.6781Z" fill="currentColor"></path>
