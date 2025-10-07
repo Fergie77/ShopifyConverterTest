@@ -1,0 +1,90 @@
+<script src="{{ 'li_custom.js' | asset_url }}" type="text/javascript"></script>
+<div data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&amp;product_id={{ product.id }}&amp;limit=4&amp;intent=related" class="padding-global padding-section-medium product-recommendations">
+          <div class="container-large">
+            <div class="headline-wrapper">
+              <h2 li-settings:text="Heading" class="heading-style-h2">{{ section.settings.text_heading }}</h2>
+            </div>
+            <div class="product_list-wrapper">
+              <ul role="list" class="product_list w-list-unstyled">
+                {% for product in recommendations.products %}<li li-for="product in recommendations.products" class="product_list-item">
+                  <div li-snippet:product="product" li-snippet="product-item">
+                    <div li-element="product-variant-container" class="product-item_component" x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})" x-init="$nextTick(() =&gt; { activateVariants() })" @setbundleitem.window="updateBundleItem($event.detail.product, $event.detail.quantity)">
+                      <div class="product-item_image-link">
+                        <a li-object:href="product.url" href="{{ product.url }}" class="product-item_image-wrapper w-inline-block"><img li-object:alt="product.featured_image.alt" loading="lazy" li-object:src="product.featured_image | image_url: width: 450" src="{{ product.featured_image | image_url: width: 450 }}" alt="{{ product.featured_image.alt }}" class="product-item_image"></a>
+                        <div class="product-item_tag_list">
+                          {% if product.selected_or_first_available_variant.available != true %}<div li-if="product.selected_or_first_available_variant.available != true" class="product-item_tag">Not in Stock</div>{% endif %}
+                          <!-- if product.compare_at_price_max > product.price --><div li-if="product.compare_at_price_max &gt; product.price" class="product-item_tag is-red">Sale</div>{% endif %}
+                        </div>
+                      </div>
+                      <div class="spacer-xxsmall"></div>
+                      <a li-object:href="product.url" href="{{ product.url }}" class="product-item_text-link w-inline-block">
+                        <div class="product-item_left">
+                          <div li-object="product.vendor" class="text-size-small">{{ product.vendor }}</div>
+                          <div li-object="product.title" class="heading-style-h4 text-weight-normal">{{ product.title }}</div>
+                        </div>
+                        <div class="product-item_price">
+                          <!-- if product.compare_at_price_max > product.price --><div li-if="product.compare_at_price_max &gt; product.price">
+                            <div li-object="product.compare_at_price | money" class="text-size-regular text-style-strikethrough text-style-muted">{{ product.compare_at_price | money }}</div>
+                          </div>{% endif %}
+                          <div li-object="product.price | money" class="text-size-regular">{{ product.price | money }}</div>
+                        </div>
+                      </a>
+                      <div class="spacer-small"></div>
+                      <div class="margin-top-auto">
+                        <div class="product-item_form-wrapper">
+                          {% if product.available == true %}<div li-if="product.available == true">
+                            <a li-element="add-to-cart" href="#" class="button max-width-full w-button">Add to Cart</a>
+                          </div>{% endif %}
+                          {% if product.available != true %}<div li-if="product.available != true">
+                            <a href="#" class="button is-secondary pointer-events-off max-width-full w-button">Not in Stock</a>
+                          </div>{% endif %}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>{% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="hide w-embed w-script">
+          <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const productRecommendationsSection = document.querySelector('.product-recommendations');
+    const url = productRecommendationsSection.dataset.url;
+    fetch(url)
+      .then(response => response.text())
+      .then(text => {
+      const html = document.createElement('div');
+      html.innerHTML = text;
+      const recommendations = html.querySelector('.product-recommendations');
+      if (recommendations && recommendations.innerHTML.trim().length) {
+        productRecommendationsSection.innerHTML = recommendations.innerHTML;
+      }
+    })
+      .catch(e => {
+      console.error(e);
+    });
+  });
+</script>
+        </div>
+       {% schema %} {
+    "tag": "section",
+    "name": "Recommended Products",
+    "class": "section_product-recommended",
+    "settings": [
+        {
+            "id": "text_heading",
+            "type": "text",
+            "label": "Heading",
+            "default": "Recommended"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Recommended Products",
+            "category": "Liquify",
+            "blocks": []
+        }
+    ]
+} {% endschema %}
