@@ -611,13 +611,7 @@ html:not(.wf-design-mode) .layout-grid_wrapper {
                       </svg>
                       <div class="nav_shop-quantity" x-text="cart.item_count">1</div>
                     </div>
-                    <nav class="nav_mini-cart-holder w-dropdown-list"><div style="background: rgb(240, 240, 240); padding: 10px; margin: 10px; border: 2px solid rgb(51, 51, 51); font-family: monospace; font-size: 11px;">
-      <strong>🐛 Cart Debug Info:</strong><br>
-      <span style="color: blue;">Item Count:</span> <span x-text="cart.item_count"></span><br>
-      <span style="color: blue;">Total Price:</span> <span x-text="cart.total_price"></span><br>
-      <span style="color: blue;">Items Array Length:</span> <span x-text="cart.items.length"></span><br>
-      <span style="color: blue;">Items Data:</span> <span x-text="JSON.stringify(cart.items.map(i =&gt; ({ title: i.product_title, qty: i.quantity })))"></span>
-    </div>
+                    <nav class="nav_mini-cart-holder w-dropdown-list">
                       <div class="nav_mini-cart-close" @click="toggleMiniCart()"></div>
                       <div class="mini-cart_component">
                         <div class="mini-cart_full" x-show="cart.item_count &gt; 0">
