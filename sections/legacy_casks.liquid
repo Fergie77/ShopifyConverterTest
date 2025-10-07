@@ -7,11 +7,11 @@
               <p class="legacy-casks_detail-text_item">Proudly<br>by Balmaud</p>
             </div>
             <div id="w-node-_180143e4-68e7-1142-bd61-593d115015c7-b972f49a" class="legacy-casks_info">
-              <h2 class="legacy-casks_heading text-size-large text-style-allcaps">{{ section.settings.text_heading }}</h2>
-              <p>{{ section.settings.text_paragraph }}</p>
+              <h2 li-settings:text="Heading" class="legacy-casks_heading text-size-large text-style-allcaps">{{ section.settings.text_heading }}</h2>
+              <p li-settings:text="Paragraph">{{ section.settings.text_paragraph }}</p>
               <div data-wf--button-2--variant="expanded-link" class="button w-variant-ef1e1ef6-6c42-592a-75e0-6747891b3360">
-                <p>{{ section.settings.text_button_text }}</p>
-                <a href="{{ section.settings.url_link }}" class="button_link w-inline-block"></a>
+                <p li-settings:text="Button Text">{{ section.settings.text_button_text }}</p>
+                <a li-settings:url="Link" href="{{ section.settings.url_link }}" class="button_link w-inline-block"></a>
                 {% if article.url %}<div li-if="article.url" class="absolute-wrapper w-variant-ef1e1ef6-6c42-592a-75e0-6747891b3360">
                   <a li-object:href="article.url" href="{{ article.url }}" class="button_link w-inline-block"></a>
                 </div>{% endif %}

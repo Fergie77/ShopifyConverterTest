@@ -10,8 +10,8 @@
               </div>
             </div>
             <p id="w-node-b04870a1-5c7a-415e-37e9-ce8771d9cf5f-b972f49a" class="manifesto_eyebrow">Our Manifesto</p>
-            <p balmaud-animation="fade-in" id="w-node-e81f4778-228d-ac66-4e64-f936846ebe6c-b972f49a" class="manifesto_paragraph">{{ section.settings.text_paragraph }}</p>
-            <h2 data-stagger="0.05" balmaud-animation="split-fade-in" id="w-node-a6aa2052-33f2-bba1-a56c-d0445962e633-b972f49a" class="manifesto_heading heading-style-h4">{{ section.settings.text_heading }}</h2>
+            <p balmaud-animation="fade-in" li-settings:text="Paragraph" id="w-node-e81f4778-228d-ac66-4e64-f936846ebe6c-b972f49a" class="manifesto_paragraph">{{ section.settings.text_paragraph }}</p>
+            <h2 data-stagger="0.05" li-settings:text="Heading" balmaud-animation="split-fade-in" id="w-node-a6aa2052-33f2-bba1-a56c-d0445962e633-b972f49a" class="manifesto_heading heading-style-h4">{{ section.settings.text_heading }}</h2>
             <div id="w-node-_84ef53f1-0854-3589-c67e-a5e2e7ee8283-b972f49a" class="manifesto_image_wrapper">
               <div class="manifesto_image">{% if section.settings.image_image %}
 {{ section.settings.image_image | image_url: width: 2000 | image_tag: loading: 'lazy', class: 'manifesto_image', sizes: '100vw' }}

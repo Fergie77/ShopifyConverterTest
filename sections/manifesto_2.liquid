@@ -9,12 +9,12 @@
                 <div class="manifesto_image_mask is-right"></div>
               </div>
             </div>
-            <p balmaud-animation="fade-in" id="w-node-_9546b04b-4705-d4d1-ddd9-1b6c150eb857-b972f49a" class="manifesto_paragraph shift-left">{{ section.settings.text_paragraph }}</p>
-            <h2 data-stagger="0.05" balmaud-animation="split-fade-in" id="w-node-_9546b04b-4705-d4d1-ddd9-1b6c150eb859-b972f49a" class="manifesto_heading heading-style-h4">{{ section.settings.text_heading }}</h2>
+            <p balmaud-animation="fade-in" li-settings:text="Paragraph" id="w-node-_9546b04b-4705-d4d1-ddd9-1b6c150eb857-b972f49a" class="manifesto_paragraph shift-left">{{ section.settings.text_paragraph }}</p>
+            <h2 data-stagger="0.05" li-settings:text="Heading" balmaud-animation="split-fade-in" id="w-node-_9546b04b-4705-d4d1-ddd9-1b6c150eb859-b972f49a" class="manifesto_heading heading-style-h4">{{ section.settings.text_heading }}</h2>
             <div balmaud-animation="fade-in" id="w-node-_8f4e6501-85b1-45e7-a50d-e5cf10f2a6ad-b972f49a">
               <div data-wf--button-2--variant="dark" class="button w-variant-80eba121-a0c2-7ee1-0a00-beff34119e31">
-                <p>{{ section.settings.text_button_text }}</p>
-                <a href="{{ section.settings.url_link }}" class="button_link w-inline-block"></a>
+                <p li-settings:text="Button Text">{{ section.settings.text_button_text }}</p>
+                <a li-settings:url="Link" href="{{ section.settings.url_link }}" class="button_link w-inline-block"></a>
                 {% if article.url %}<div li-if="article.url" class="absolute-wrapper">
                   <a li-object:href="article.url" href="{{ article.url }}" class="button_link w-inline-block"></a>
                 </div>{% endif %}

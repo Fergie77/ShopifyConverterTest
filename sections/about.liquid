@@ -9,13 +9,13 @@
 {% else %}
 <img src="" alt="" loading="lazy" class="blog_item_image">
 {% endif %}
-                <h2 class="blog_item_heading text-size-large text-style-allcaps">{{ block.settings.text_heading }}</h2>
+                <h2 li-settings:text="Heading" class="blog_item_heading text-size-large text-style-allcaps">{{ block.settings.text_heading }}</h2>
                 <div class="blog_item_paragraph">
-                  <p class="blog_item_paragraph">{{ block.settings.text_paragraph }}</p>
+                  <p li-settings:text="Paragraph" class="blog_item_paragraph">{{ block.settings.text_paragraph }}</p>
                 </div>
                 <div data-wf--button-2--variant="expanded-link" class="button w-variant-ef1e1ef6-6c42-592a-75e0-6747891b3360">
-                  <p>{{ block.settings.text_button_text }}</p>
-                  <a href="{{ block.settings.url_link }}" class="button_link w-inline-block"></a>
+                  <p li-settings:text="Button Text">{{ block.settings.text_button_text }}</p>
+                  <a li-settings:url="Link" href="{{ block.settings.url_link }}" class="button_link w-inline-block"></a>
                   {% if article.url %}<div li-if="article.url" class="absolute-wrapper w-variant-ef1e1ef6-6c42-592a-75e0-6747891b3360">
                     <a li-object:href="article.url" href="{{ article.url }}" class="button_link w-inline-block"></a>
                   </div>{% endif %}

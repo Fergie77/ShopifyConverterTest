@@ -12,32 +12,32 @@
           <div id="w-node-d6646beb-e906-781e-137d-1683b06e37aa-b06e379e" class="footer_form_links_wrapper">
             <div class="footer_form_links_layout">
               <h3 class="footer_form_links-heading">Information</h3>
-              {% for link in linklists['information'].links %}<div>
-                <a li-object:href="link.url" href="{{ link.url }}" class="footer_form_link">{{ link.title }}</a>
+              {% for link in linklists['information'].links %}<div li-for="link in linklists['information'].links">
+                <a li-object="link.title" li-object:href="link.url" href="{{ link.url }}" class="footer_form_link">{{ link.title }}</a>
               </div>{% endfor %}
-              {% for link in linklists['information'].links %}<div>
-                <a li-object:href="link.url" href="{{ link.url }}" aria-current="page" class="footer_form_link w--current">{{ link.title }}</a>
+              {% for link in linklists['information'].links %}<div li-for="link in linklists['information'].links">
+                <a li-object="link.title" li-object:href="link.url" href="{{ link.url }}" aria-current="page" class="footer_form_link w--current">{{ link.title }}</a>
               </div>{% endfor %}
             </div>
             <div id="w-node-d6646beb-e906-781e-137d-1683b06e37b4-b06e379e" class="footer_form_links_layout">
               <h3 class="footer_form_links-heading">Contact</h3>
-              {% for link in linklists['contact'].links %}<div>
-                <a li-object:href="link.url" href="{{ link.url }}" class="footer_form_link">{{ link.title }}</a>
+              {% for link in linklists['contact'].links %}<div li-for="link in linklists['contact'].links">
+                <a li-object="link.title" li-object:href="link.url" href="{{ link.url }}" class="footer_form_link">{{ link.title }}</a>
               </div>{% endfor %}
-              {% for link in linklists['contact'].links %}<div>
-                <a li-object:href="link.url" href="{{ link.url }}" class="footer_form_link">{{ link.title }}</a>
+              {% for link in linklists['contact'].links %}<div li-for="link in linklists['contact'].links">
+                <a li-object="link.title" li-object:href="link.url" href="{{ link.url }}" class="footer_form_link">{{ link.title }}</a>
               </div>{% endfor %}
             </div>
             <div class="footer_form_links_layout">
               <h3 class="footer_form_links-heading">Follow Us</h3>
-              {% for link in linklists['socials'].links %}<div>
-                <a li-object:href="link.url" href="{{ link.url }}" target="_blank" class="footer_form_link">{{ link.title }}</a>
+              {% for link in linklists['socials'].links %}<div li-for="link in linklists['socials'].links">
+                <a li-object="link.title" li-object:href="link.url" href="{{ link.url }}" target="_blank" class="footer_form_link">{{ link.title }}</a>
               </div>{% endfor %}
-              {% for link in linklists['socials'].links %}<div>
-                <a li-object:href="link.url" href="{{ link.url }}" target="_blank" class="footer_form_link">{{ link.title }}</a>
+              {% for link in linklists['socials'].links %}<div li-for="link in linklists['socials'].links">
+                <a li-object="link.title" li-object:href="link.url" href="{{ link.url }}" target="_blank" class="footer_form_link">{{ link.title }}</a>
               </div>{% endfor %}
-              {% for link in linklists['socials'].links %}<div>
-                <a li-object:href="link.url" href="{{ link.url }}" target="_blank" class="footer_form_link">{{ link.title }}</a>
+              {% for link in linklists['socials'].links %}<div li-for="link in linklists['socials'].links">
+                <a li-object="link.title" li-object:href="link.url" href="{{ link.url }}" target="_blank" class="footer_form_link">{{ link.title }}</a>
               </div>{% endfor %}
             </div>
           </div>

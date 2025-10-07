@@ -1,7 +1,7 @@
 <div class="product-info-2_wrapper">
           <div class="product-info-2_layout">
-            <h2 id="w-node-_89494760-ad90-b34f-a552-3b6d88d4745b-35b5186b" class="product-info-2_heading heading-style-h3">{{ section.settings.text_heading }}</h2>
-            <p id="w-node-_89494760-ad90-b34f-a552-3b6d88d4745f-35b5186b">{{ section.settings.text_paragraph }}</p>
+            <h2 li-settings:text="Heading" id="w-node-_89494760-ad90-b34f-a552-3b6d88d4745b-35b5186b" class="product-info-2_heading heading-style-h3">{{ section.settings.text_heading }}</h2>
+            <p li-settings:text="Paragraph" id="w-node-_89494760-ad90-b34f-a552-3b6d88d4745f-35b5186b">{{ section.settings.text_paragraph }}</p>
             <div id="w-node-_89494760-ad90-b34f-a552-3b6d88d47461-35b5186b" class="product-info_image_wrapper">{% if section.settings.image_image %}
 {{ section.settings.image_image | image_url: width: 2000 | image_tag: loading: 'lazy', class: 'product-info_image_item is-right', sizes: '100vw' }}
 {% else %}
