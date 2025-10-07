@@ -602,22 +602,22 @@ html:not(.wf-design-mode) .layout-grid_wrapper {
             <div class="nav_aside">
               <div>
                 <div class="nav_mini-cart">
-                  <div data-hover="false" data-delay="0" class="nav_dropdown w-dropdown" x-data="handleMinicart()" @cartupdated.window="getCart()" @toggleminicart.window="toggleMiniCart()" @showcartmessage.window="showCartMessage($event)">
-                    <div class="nav_shop-icon w-dropdown-toggle" @click="toggleMiniCart()"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 21 18" fill="none" class="nav_basket">
+                  <div data-hover="false" data-delay="0" li-element="mini-cart" class="nav_dropdown w-dropdown" x-data="handleMinicart()" @cartupdated.window="getCart()" @toggleminicart.window="toggleMiniCart()" @showcartmessage.window="showCartMessage($event)">
+                    <div li-element="mini-cart-toggle" class="nav_shop-icon w-dropdown-toggle" @click="toggleMiniCart()"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 21 18" fill="none" class="nav_basket">
                         <path d="M16.5947 17.3032H3.63969L0 6.05322H20.2341L16.5947 17.3032ZM4.09469 16.6782H16.14L19.3753 6.67822H0.859375L4.09469 16.6782Z" fill="currentColor"></path>
                         <path d="M6.7018 0L7.28242 0.232188L4.7818 6.48156L4.20117 6.24938L6.7018 0ZM13.5324 0L16.0324 6.25L15.4518 6.4825L12.9518 0.232188L13.5324 0ZM7.30461 11.6781H12.9296V12.3031H7.30461V11.6781Z" fill="currentColor"></path>
                       </svg>
-                      <div class="nav_shop-quantity" x-text="cart.item_count">1</div>
+                      <div li-element="mini-cart-item-count" class="nav_shop-quantity" x-text="cart.item_count">1</div>
                     </div>
-                    <nav class="nav_mini-cart-holder w-dropdown-list">
-                      <div class="nav_mini-cart-close" @click="toggleMiniCart()"></div>
+                    <nav li-element="mini-cart-container" class="nav_mini-cart-holder w-dropdown-list">
+                      <div li-element="dropdown-toggle" class="nav_mini-cart-close" @click="toggleMiniCart()"></div>
                       <div class="mini-cart_component">
-                        <div class="mini-cart_full" x-show="cart.item_count &gt; 0">
+                        <div li-element="mini-cart-full" class="mini-cart_full" x-show="cart.item_count &gt; 0">
                           <div class="mini-cart_header">
                             <div class="mini-cart_heading_wrapper">
                               <div class="mini-cart_heading">Basket</div>
-                              <div class="mini-cart_quantity" x-text="cart.item_count">1</div>
-                            </div><button aria-label="Close Cart" class="nav_dropdown-close-button" @click="toggleMiniCart()">
+                              <div li-element="mini-cart-item-count" class="mini-cart_quantity" x-text="cart.item_count">1</div>
+                            </div><button li-element="dropdown-toggle" aria-label="Close Cart" class="nav_dropdown-close-button" @click="toggleMiniCart()">
                               <div class="nav_dropdown-close-icon w-embed"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                   <path d="M1.84775 14.178L0.447754 12.778L6.04775 7.17798L0.447754 1.57798L1.84775 0.177979L7.44775 5.77798L13.0478 0.177979L14.4478 1.57798L8.84775 7.17798L14.4478 12.778L13.0478 14.178L7.44775 8.57798L1.84775 14.178Z" fill="currentColor"></path>
                                 </svg></div>
@@ -625,7 +625,7 @@ html:not(.wf-design-mode) .layout-grid_wrapper {
                           </div>
                           <div class="mini-cart_line-item no-scrollbar">
                             <ul role="list" class="mini-cart_line-item_list w-list-unstyled">
-                              <template x-for="item in cart.items" :key="item.key"><li class="mini-cart_line-item_item"><img class="mini-cart_line-item_img" src="{{ 'PRODUCT_PLACEHOLDER.webp' | asset_url }}" alt="" sizes="100vw" loading="lazy" :src="item.image || '{{ 'PRODUCT_PLACEHOLDER.webp' | asset_url }}'" :alt="item.product_title" :srcset="(item.image ? item.image.replace(/(\.[^.?]+)(\?.*)?$/, '_500x$1$2') : '{{ 'PRODUCT_PLACEHOLDER.webp' | asset_url }}') + ' 500w' + ', ' + (item.image || '{{ 'PRODUCT_PLACEHOLDER.webp' | asset_url }}') + ' 649w'">
+                              <template x-for="item in cart.items" :key="item.key"><li li-element="mini-cart-item" class="mini-cart_line-item_item"><img class="mini-cart_line-item_img" src="{{ 'PRODUCT_PLACEHOLDER.webp' | asset_url }}" alt="" sizes="100vw" loading="lazy" :src="item.image || '{{ 'PRODUCT_PLACEHOLDER.webp' | asset_url }}'" :alt="item.product_title" :srcset="(item.image ? item.image.replace(/(\.[^.?]+)(\?.*)?$/, '_500x$1$2') : '{{ 'PRODUCT_PLACEHOLDER.webp' | asset_url }}') + ' 500w' + ', ' + (item.image || '{{ 'PRODUCT_PLACEHOLDER.webp' | asset_url }}') + ' 649w'">
                                 <div class="mini-cart_line-item_product-info">
                                   <div class="mini-cart_line-item_title_wrapper">
                                     <div class="text-size-regular" x-text="item.product_title">Highland Dry Gin</div>
@@ -638,10 +638,10 @@ html:not(.wf-design-mode) .layout-grid_wrapper {
                                     </div>
                                   </div>
                                   <div id="w-node-_65d74550-f98c-160e-50c6-38dce390f57b-e390f55f" class="mini-cart_line-item_quantity">
-                                    <a href="#" class="mini-cart_line-item_quantity-adjust" @click.prevent="decreaseCartItemQuantity(item.key, item.quantity)">-</a><input class="mini-cart_line-item_quantity-adjust" value="1" :value="item.quantity" readonly="readonly">
-                                    <a href="#" class="mini-cart_line-item_quantity-adjust" @click.prevent="increaseCartItemQuantity(item.key, item.quantity)">+</a>
+                                    <a li-element="mini-cart-item-decrease" href="#" class="mini-cart_line-item_quantity-adjust" @click.prevent="decreaseCartItemQuantity(item.key, item.quantity)">-</a><input li-element="mini-cart-item-quantity" class="mini-cart_line-item_quantity-adjust" value="1" :value="item.quantity" readonly="readonly">
+                                    <a li-element="mini-cart-item-increase" href="#" class="mini-cart_line-item_quantity-adjust" @click.prevent="increaseCartItemQuantity(item.key, item.quantity)">+</a>
                                   </div>
-                                  <div id="w-node-_65d74550-f98c-160e-50c6-38dce390f581-e390f55f" class="text-size-tiny text-color-grey" @click="updateCartItemQuantity(item.key, 0)" style="cursor: pointer;">Remove</div>
+                                  <div li-element="mini-cart-item-remove" id="w-node-_65d74550-f98c-160e-50c6-38dce390f581-e390f55f" class="text-size-tiny text-color-grey" @click="updateCartItemQuantity(item.key, 0)" style="cursor: pointer;">Remove</div>
                                 </div>
                               </li></template>
                             </ul>
@@ -659,7 +659,7 @@ html:not(.wf-design-mode) .layout-grid_wrapper {
                                 </div>
                               </div>
                             </div>
-                            <div class="mini-cart_footer-message hide" :class="{ 'hide': !cart.response.show }">
+                            <div li-element="mini-cart-api-response" class="mini-cart_footer-message hide" :class="{ 'hide': !cart.response.show }">
                               <div class="mini-cart_footer-message-item">
                                 <div class="text-size-regular-3 text-weight-bold-2">Message</div>
                                 <div class="text-size-regular-3 text-weight-bold-2" x-text="cart.response.result?.message">14,99 $</div>
@@ -669,9 +669,9 @@ html:not(.wf-design-mode) .layout-grid_wrapper {
                             <a li-object:href="routes.cart_url" href="{{ routes.cart_url }}" class="button is-dark hide w-button">Cart</a>
                           </div>
                         </div>
-                        <div li-cloak="hide" class="mini-cart_empty" x-show="cart.item_count === 0">
+                        <div li-cloak="hide" li-element="mini-cart-empty" class="mini-cart_empty" x-show="cart.item_count === 0">
                           <div class="mini-cart_header">
-                            <div class="mini-cart_heading">Basket</div><button aria-label="Close Cart" class="nav_dropdown-close-button" @click="toggleMiniCart()">
+                            <div class="mini-cart_heading">Basket</div><button li-element="dropdown-toggle" aria-label="Close Cart" class="nav_dropdown-close-button" @click="toggleMiniCart()">
                               <div class="nav_dropdown-close-icon w-embed"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                   <path d="M1.84775 14.178L0.447754 12.778L6.04775 7.17798L0.447754 1.57798L1.84775 0.177979L7.44775 5.77798L13.0478 0.177979L14.4478 1.57798L8.84775 7.17798L14.4478 12.778L13.0478 14.178L7.44775 8.57798L1.84775 14.178Z" fill="currentColor"></path>
                                 </svg></div>
