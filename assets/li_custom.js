@@ -676,7 +676,17 @@ document.addEventListener("alpine:init", () => {
             this.$dispatch("cartupdated", this.products);
 
             if (toggleMiniCart) {
+              console.log(
+                "🛒 DISPATCHING toggleminicart event, toggleMiniCart =",
+                toggleMiniCart
+              );
               this.$dispatch("toggleminicart");
+              console.log("🛒 toggleminicart event dispatched");
+            } else {
+              console.log(
+                "⚠️ NOT dispatching toggleminicart, toggleMiniCart =",
+                toggleMiniCart
+              );
             }
 
             this.$dispatch("showcartmessage", {

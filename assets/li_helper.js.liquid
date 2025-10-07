@@ -78,16 +78,23 @@ var LiquifyHelper = {
      * Trigger dropdown click to open mini-cart
      */
     handleTriggerClick: function() {
+        console.log("🔧 LiquifyHelper.handleTriggerClick() called");
         var elements = document.querySelectorAll('[li-element="mini-cart-toggle"]');
+        console.log("🔍 Found", elements.length, "elements with [li-element='mini-cart-toggle']");
         for (var i = 0; i < elements.length; i++) {
             var element = elements[i];
+            console.log("📍 Processing element", i, ":", element);
             var closestDropdown = element.closest('.w-dropdown-toggle');
+            console.log("🎯 Closest .w-dropdown-toggle:", closestDropdown);
             if (closestDropdown) {
+                console.log("✅ Clicking dropdown toggle");
                 this.triggerClick(closestDropdown);
+                console.log("✅ Dropdown toggle clicked");
             } else {
-                console.error('(helper.js) No dropdown found for minicart trigger');
+                console.error('❌ (helper.js) No dropdown found for minicart trigger');
             }
         }
+        console.log("🏁 handleTriggerClick() completed");
     },
 
     /**
