@@ -674,7 +674,7 @@ html:not(.wf-design-mode) .layout-grid_wrapper {
               <a href="about.html" class="nav_link w-variant-5bc79521-0627-45d0-3288-096227e51632 temporary">About</a>
               <a href="private-casks.html" class="nav_link w-variant-5bc79521-0627-45d0-3288-096227e51632 temporary">Private CAsks</a>
             </div>
-            <div class="nav_aside w-variant-5bc79521-0627-45d0-3288-096227e51632">
+            <div class="nav_aside">
               <div>
                 <div class="nav_mini-cart">
                   <div data-hover="false" data-delay="0" li-element="mini-cart" class="nav_dropdown w-dropdown" x-data="handleMinicart()" @cartupdated.window="getCart()" @toggleminicart.window="toggleMiniCart()" @showcartmessage.window="showCartMessage($event)">
@@ -906,7 +906,7 @@ if(ageGate){
     });
   });
 </script>
-  <script src="https://balmaud.netlify.app/main.js"></script>
+  <script type="module" src="https://balmaud.netlify.app/main.js"></script>
 
   <script src="{{ 'li_custom.js' | asset_url }}"></script>
   <script src="{{ 'li_minicart.js' | asset_url }}"></script>
