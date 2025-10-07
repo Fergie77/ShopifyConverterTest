@@ -1,0 +1,68 @@
+<div balmaud-animation="nav-colour-swap" class="hero_wrapper">
+          <div class="hero_layout">
+            <div id="w-node-_3b12c9a1-675a-1657-7b90-869b9b64ce73-b972f49a" class="hero_info_layout">
+              <h1 li-settings:text="Heading" balmaud-animation="split-fade-in" data-stagger="0.05" id="w-node-_3b12c9a1-675a-1657-7b90-869b9b64ce76-b972f49a" class="hero_heading heading-style-h1">{{ section.settings.text_heading }}</h1>
+              <div balmaud-animation="fade-in" id="w-node-_39410b78-9b1c-c55d-1116-ca9ce790afed-b972f49a" class="hero_info_bottom_layout">
+                <p balmaud-animation="fade-in" li-settings:text="Paragraph" class="hero_info_paragraph text-color-white">{{ section.settings.text_paragraph }}</p>
+                <div data-wf--button-2--variant="base" class="button">
+                  <p li-settings:text="Button Text">{{ section.settings.text_button_text }}</p>
+                  <a li-settings:url="Link" href="{{ section.settings.url_link }}" class="button_link w-inline-block"></a>
+                  {% if article.url %}<div li-if="article.url" class="absolute-wrapper">
+                    <a li-object:href="article.url" href="{{ article.url }}" class="button_link w-inline-block"></a>
+                  </div>{% endif %}
+                </div>
+              </div>
+            </div>
+            <div id="w-node-_3b12c9a1-675a-1657-7b90-869b9b64ce78-b972f49a" class="hero_detail-text_wrapper">
+              <p class="hero_detail-text">Single estate distillery</p>
+              <p class="hero_detail-text">Single estate distillery</p>
+              <p class="hero_detail-text">Single estate distillery</p>
+            </div>
+          </div>{% if section.settings.image_image %}
+{{ section.settings.image_image | image_url: width: 2000 | image_tag: loading: 'lazy', class: 'hero_background-content', balmaud-animation: 'content-fade-in' }}
+{% else %}
+<img src="{{ 'image-30.webp' | asset_url }}" loading="lazy" balmaud-animation="content-fade-in" alt="" class="hero_background-content">
+{% endif %}
+        </div>
+       {% schema %} {
+    "tag": "section",
+    "name": "Home Hero",
+    "class": "hero_section",
+    "settings": [
+        {
+            "id": "text_heading",
+            "type": "text",
+            "label": "Heading",
+            "default": "Nothing Ordinary"
+        },
+        {
+            "id": "text_paragraph",
+            "type": "text",
+            "label": "Paragraph",
+            "default": "THE FIRST RELEASE SPIRIT FROM BALMAUD AVAILABLE NOW ONLINE. THE FIRST RELEASE SPIRIT FROM BALMAUD AVAILABLE NOW ONLINE"
+        },
+        {
+            "id": "text_button_text",
+            "type": "text",
+            "label": "Button Text",
+            "default": "Shop Now"
+        },
+        {
+            "id": "url_link",
+            "type": "url",
+            "label": "Link"
+        },
+        {
+            "id": "image_image",
+            "type": "image_picker",
+            "label": "Image"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Home Hero",
+            "category": "Liquify",
+            "blocks": []
+        }
+    ]
+} {% endschema %}
