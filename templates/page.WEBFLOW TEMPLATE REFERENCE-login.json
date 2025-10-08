@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "login": {
+      "type": "login"
+    }
+  },
+  "layout": "theme",
+  "wrapper": "main.main-wrapper",
+  "order": [
+    "login"
+  ]
+}

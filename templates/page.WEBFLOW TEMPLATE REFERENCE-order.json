@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "account_hero": {
+      "type": "account_hero"
+    },
+    "order": {
+      "type": "order"
+    }
+  },
+  "layout": "theme",
+  "wrapper": "main.main-wrapper",
+  "order": [
+    "account_hero",
+    "order"
+  ]
+}
