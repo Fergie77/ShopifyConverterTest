@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "gift_card": {
+      "type": "gift_card"
+    }
+  },
+  "layout": "page.giftcard",
+  "wrapper": "main.main-wrapper",
+  "order": [
+    "gift_card"
+  ]
+}

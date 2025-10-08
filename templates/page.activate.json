@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "activate_account": {
+      "type": "activate_account"
+    }
+  },
+  "layout": "page.activate",
+  "wrapper": "main.main-wrapper",
+  "order": [
+    "activate_account"
+  ]
+}
