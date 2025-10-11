@@ -2,7 +2,7 @@
           <div class="container-large">
             <div class="login_tabs">
               <div class="login_form w-form">
-                <h1 li-settings:text="Activate Account" class="heading-style-h2 text-align-center">{{ section.settings.text_activate_account }}</h1>
+                <h1 class="heading-style-h2 text-align-center">{{ section.settings.text_activate_account }}</h1>
                 <form id="email-form" name="email-form" data-name="Email Form" method="get" li-form="activate_customer_password" class="form_form" data-wf-page-id="68e5827dc33ba2f819dc5576" data-wf-element-id="76a9ef2d-868c-0ff6-6c81-e850978114e8">
                   {% if form.errors %}<div li-if="form.errors" class="form_error-message">
                     <div li-object="form.errors | default_errors" class="text-size-regular text-color-red text-align-center">{{ form.errors | default_errors }}</div>

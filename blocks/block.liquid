@@ -1,7 +1,7 @@
 <div li-block="Block" role="listitem" class="more_item w-dyn-item">
-                    <a li-settings:url="Link" href="{{ block.settings.url_link }}" class="more_image-link w-inline-block">
+                    <a href="{{ block.settings.url_link }}" class="more_image-link w-inline-block">
                       <div class="more_image-wrapper">
-                        <h3 li-settings:text="Heading" class="heading-style-h3 z-index-1 text-color-white">{{ block.settings.text_heading }}</h3>{% if block.settings.image_image %}
+                        <h3 class="heading-style-h3 z-index-1 text-color-white">{{ block.settings.text_heading }}</h3>{% if block.settings.image_image %}
 {{ block.settings.image_image | image_url: width: 450 | image_tag: loading: 'lazy', class: 'more_image', loading: variable, data-id: 'test' }}
 {% else %}
 {{ 'detailed-apparel-1' | placeholder_svg_tag: 'more_image' }}

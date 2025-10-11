@@ -1,5 +1,4 @@
-
-                                  <div li-if="predictive_search.performed" class="predictive-search_conditional">
+<div li-if="predictive_search.performed" class="predictive-search_conditional">
                                     <div li-tag="assign first_column_results_size = predictive_search.resources.queries.size | plus: predictive_search.resources.collections.size | plus: predictive_search.resources.pages.size | plus: predictive_search.resources.articles.size | plus: predictive_search.resources.products.size" class="hide">This is some text inside of a div block.</div>
                                     <div li-if="first_column_results_size &gt; 0" class="predictive-search_conditional">
                                       <div li-if="predictive_search.resources.queries.size &gt; 0 or predictive_search.resources.collections.size &gt; 0" class="predictive-search_topic">
@@ -64,8 +63,8 @@
                                           {% for block in section.blocks %}
   {% if block.type == "search---suggestion" %}
     <li li-block="Search - Suggestion" class="predictive-search_item">
-                                            <a li-settings:url="Link" href="{{ block.settings.url_link }}" class="predictive-search_link w-inline-block">
-                                              <div li-settings:text="Text">{{ block.settings.text_text }}</div>
+                                            <a href="{{ block.settings.url_link }}" class="predictive-search_link w-inline-block">
+                                              <div>{{ block.settings.text_text }}</div>
                                             </a>
                                           </li>
   {% endif %}
@@ -91,7 +90,7 @@
                                     </div>
                                   </div>
                                  {% schema %} {
-    "tag": "section",
+    "tag": "div",
     "name": "predictive_search",
     "class": "predictive-search_section",
     "settings": [
@@ -99,6 +98,15 @@
             "id": "collection_search_bestseller",
             "type": "collection",
             "label": "Search - Bestseller"
+        },
+        {
+            "type": "range",
+            "id": "collection_search_bestseller_limit",
+            "min": 1,
+            "max": 99,
+            "step": 1,
+            "label": "Limit: Search - Bestseller",
+            "default": 6
         }
     ],
     "blocks": [

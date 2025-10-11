@@ -15,7 +15,7 @@
                 <div>No items found.</div>
               </div>
             </div>
-            <!-- if paginate.pages > 1 --><nav li-if="paginate.pages &gt; 1" class="pagination_component">
+            {% if paginate.pages &gt; 1 %}<nav li-if="paginate.pages &gt; 1" class="pagination_component">
               <ul role="list" class="pagination_list w-list-unstyled">
                 {% if paginate.previous %}<li li-if="paginate.previous" class="pagination_item">
                   <a li-object:href="paginate.previous.url" href="{{ paginate.previous.url }}" class="button is-secondary is-icon w-inline-block">

@@ -1,5 +1,4 @@
-
-        <div data-animation="default" class="nav_component w-nav" data-easing2="ease" fs-scrolldisable-element="smart-nav" data-easing="ease" data-collapse="medium" data-w-id="9132635a-7891-b0d1-9b20-ecb0d5a86df9" role="banner" data-duration="400" x-data="">
+<div data-animation="default" class="nav_component w-nav" data-easing2="ease" fs-scrolldisable-element="smart-nav" data-easing="ease" data-collapse="medium" data-w-id="9132635a-7891-b0d1-9b20-ecb0d5a86df9" role="banner" data-duration="400" x-data="">
           <div class="nav_container">
             <a href="#" li-object:href="routes.root_url" class="nav_logo-link w-nav-brand"><img src="../images/liquify-logo.svg" loading="lazy" li-settings:image="Logo" alt="" class="nav_logo"></a>
             <nav role="navigation" id="w-node-_9132635a-7891-b0d1-9b20-ecb0d5a86dfd-d5a86df8" class="nav_menu is-page-height-tablet w-nav-menu">
@@ -137,8 +136,8 @@
                                           {% for block in section.blocks %}
   {% if block.type == "search---suggestion" %}
     <li li-block="Search - Suggestion" class="predictive-search_item">
-                                            <a li-settings:url="Link" href="{{ block.settings.url_link }}" class="predictive-search_link w-inline-block">
-                                              <div li-settings:text="Text">{{ block.settings.text_text }}</div>
+                                            <a href="{{ block.settings.url_link }}" class="predictive-search_link w-inline-block">
+                                              <div>{{ block.settings.text_text }}</div>
                                             </a>
                                           </li>
   {% endif %}
@@ -290,7 +289,7 @@
           "default": "main-menu"
           }</div>
        {% schema %} {
-    "tag": "section",
+    "tag": "div",
     "name": "Header",
     "class": "section_navbar",
     "settings": [
@@ -309,6 +308,15 @@
             "id": "collection_search_bestseller",
             "type": "collection",
             "label": "Search - Bestseller"
+        },
+        {
+            "type": "range",
+            "id": "collection_search_bestseller_limit",
+            "min": 1,
+            "max": 99,
+            "step": 1,
+            "label": "Limit: Search - Bestseller",
+            "default": 6
         },
         {
             "type": "header",

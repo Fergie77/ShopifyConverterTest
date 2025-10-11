@@ -1,12 +1,12 @@
 <div class="padding-global padding-section-medium">
           <div class="container-large">
             <div class="headline-wrapper">
-              <h2 li-settings:text="Heading" class="heading-style-h2">{{ section.settings.text_heading }}</h2>
-              <a li-settings:text="Button-Text" li-settings:url="Button-Link" href="{{ section.settings.url_button_link }}" class="button is-small w-button">{{ section.settings.text_button_text }}</a>
+              <h2 class="heading-style-h2">{{ section.settings.text_heading }}</h2>
+              <a href="{{ section.settings.url_button_link }}" class="button is-small w-button">{{ section.settings.text_button_text }}</a>
             </div>
             <div class="blog_component">
               <div class="blog_featured-item">
-                <div li-settings:article="Article" class="blog_featured-image-link">
+                {% assign article = articles[section.settings.article_article] %} <div class="blog_featured-image-link">
                   <a li-object:href="article.url" href="{{ article.url }}" class="blog_featured-image-wrapper w-inline-block">
                     <div class="blog_titel-wrapper">
                       <h3 li-object="article.title" class="heading-style-h4">{{ article.title }}</h3>
@@ -16,7 +16,8 @@
                   </a>
                 </div>
                 <div id="w-node-_4d7af1cf-0c17-815b-6613-2343dbf24ae7-dbf24ad4" class="blog_two-articles">
-                  <div li-settings:blog="Blog" class="blog_featured-item-content">
+                  {% assign blog = blogs[section.settings.blog_blog] %}
+{% for article in blog.articles limit: section.settings.post_limit_blog %}<div class="blog_featured-item-content">
                     <a li-object:href="article.url" href="{{ article.url }}" class="blog_featured-title-link w-inline-block">
                       <h3 li-object="article.title" class="heading-style-h4">{{ article.title }}</h3>
                     </a>
@@ -28,7 +29,7 @@
                           <path d="M6 3L11 8L6 13" stroke="CurrentColor" stroke-width="1.5"></path>
                         </svg></div>
                     </a>
-                  </div>
+                  </div>{% endfor %}
                 </div>
               </div>
             </div>
@@ -65,6 +66,15 @@
             "id": "blog_blog",
             "type": "blog",
             "label": "Blog"
+        },
+        {
+            "type": "range",
+            "id": "post_limit_blog",
+            "min": 1,
+            "max": 100,
+            "step": 1,
+            "label": "Posts Blog",
+            "default": 3
         }
     ],
     "presets": [

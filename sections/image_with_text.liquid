@@ -9,19 +9,19 @@
           <div class="container-large">
             <div class="header_card text-color-white">
               <div class="max-width-large">
-                <h1 li-settings:text="Heading" class="heading-style-h2">{{ section.settings.text_heading }}</h1>
+                <h1 class="heading-style-h2">{{ section.settings.text_heading }}</h1>
                 <div class="spacer-small"></div>
-                <div li-settings:richtext="Paragraph" class="text-size-medium">{{ section.settings.richtext_paragraph }}</div>
+                <div class="text-size-medium">{{ section.settings.richtext_paragraph }}</div>
               </div>
               <div class="spacer-medium"></div>
               <div class="button-group">
-                <a li-settings:url="Button-Link" li-settings:text="Button-Text" href="{{ section.settings.url_button_link }}" class="button w-button">{{ section.settings.text_button_text }}</a>
+                <a href="{{ section.settings.url_button_link }}" class="button w-button">{{ section.settings.text_button_text }}</a>
               </div>
             </div>
           </div>
         </div>
        {% schema %} {
-    "tag": "section",
+    "tag": "header",
     "name": "Image with Text",
     "class": "section_header-home",
     "settings": [
